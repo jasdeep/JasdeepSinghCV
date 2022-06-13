@@ -204,9 +204,9 @@
 
 % For elements of entry
 \newcommand*{\entrytitlestyle}[1]{{\fontsize{10pt}{1em}\bodyfont\bfseries\color{darktext} #1}}
-\newcommand*{\entrypositionstyle}[1]{{\fontsize{8pt}{1em}\bodyfont\scshape\color{graytext} #1}}
+\newcommand*{\entrypositionstyle}[1]{{\fontsize{9pt}{1em}\bodyfont\scshape\color{graytext} #1}}
 \newcommand*{\entrydatestyle}[1]{{\fontsize{8pt}{1em}\bodyfontlight\slshape\color{gray} #1}}
-\newcommand*{\entrylocationstyle}[1]{{\fontsize{9pt}{1em}\bodyfont\slshape\color{awesome} #1}}
+\newcommand*{\entrylocationstyle}[1]{{\fontsize{8pt}{1em}\bodyfontlight\slshape\color{awesome} #1}}
 \newcommand*{\descriptionstyle}[1]{{\fontsize{9pt}{1em}\bodyfont\upshape\color{text} #1}}
 
 % For elements of subentry
@@ -379,6 +379,9 @@
   \def\@letterenclosure{#2}
 }
 
+\newcommand{\cvtag}[1]{%
+  \tikz[baseline]\node[anchor=base,draw=darkGrey!70,rounded corners=0.5ex,inner xsep=1ex,inner ysep =0.55ex,text height=1.3ex,text depth=.25ex]{#1};
+}
 
 %-------------------------------------------------------------------------------
 %                Commands for extra
@@ -579,11 +582,10 @@
 
 \renewcommand{\section}[1]{%
 	\vspace{\acvSectionTopSkip}
-	\ifthenelse{\isundefined{\@mobile}}%
+	\ifthenelse{\isundefined{\@experience}}%
         {}%
         {%
-          \faMobile\acvHeaderIconSep\@mobile%
-          \setbool{isstart}{false}%
+          \faMobile
         }%
   % \texorpdfstring{\color{awesome}#2}
 	\sectionstyle{#1}
@@ -695,15 +697,15 @@
 
 % Define an environment for cvitems(for cventry)
 \newenvironment{cvitems}{%
-  \vspace{-4.0mm}
+  \vspace{-3.0mm}
   \begin{justify}
-  \begin{itemize}[leftmargin=2ex, nosep, noitemsep]
+  \begin{itemize}[leftmargin=3ex, nosep, noitemsep]
     \setlength{\parskip}{0pt}
-    \renewcommand{\labelitemi}{\bullet}
+    \renewcommand{\labelitemi}{\faAngleRight}
 }{%
   \end{itemize}
   \end{justify}
-  \vspace{-4.0mm}
+  \vspace{-3.0mm}
 }
 
 

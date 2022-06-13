@@ -1,7 +1,6 @@
 ---
 name: Jasdeep 
 surname: Singh
-# profilepic: jasdeep-552x600.jpg
 position: "Senior Cloud Engineer (Security and Performance)"
 address: "PG5A, Sector 108, Mohali, Punjab, India"
 phone: +91 9988638850
@@ -12,7 +11,6 @@ github: jasdeep
 linkedin: jasdeep
 date: "`r format(Sys.time(), '%B %Y')`"
 headcolor: 03045E
-# aboutme: "With more than 15 years of experience in designing, developing and delivering enterprise software, I take initiative and lead the engineering projects that bring robustness and resiliency to the services offered. My recent work involves security and performance engineering. I have worked on security vulnerability mitigation, migration to cloud infrastructre, performance bug resolution, and introducing concurrency."
 output: 
   vitae::awesomecv:
     page_total: true
@@ -42,7 +40,6 @@ CV %<>% print_text_block("intro")
 
 
 # Experience 
-
 ```{r}
 CV$entries_data %>% 
   filter(section == 'industry_positions') %>% 
@@ -52,15 +49,13 @@ CV$entries_data %>%
     with = title,
     where = loc,
     why = description_bullets
+    # tools = 'Java,Spring'
   )
 ```
 
 
-<!-- ``` -->
-
 
 # Projects 
-
 ```{r}
 CV$entries_data %>% 
   filter(section == 'personal_projects') %>% 
@@ -70,6 +65,8 @@ CV$entries_data %>%
     with = title,
     where = loc,
     why = description_bullets
+    # tools = 'Java,Spring'
+
   )
 ```
 
@@ -79,7 +76,7 @@ CV$entries_data %>%
 
 # Skills
 ```{r, results='asis'}
-CV %>% print_skill()
+CV %>% print_skills()
 ```
 
 
@@ -96,6 +93,8 @@ CV$entries_data %>%
     with = title,
     where = loc,
     why = description_bullets
+        # tools = 'Java,Spring'
+
   )
 ```
 
@@ -112,6 +111,7 @@ CV$entries_data %>%
     with = title,
     where = loc,
     why = description_bullets
+        # tools = 'Java,Spring'
   )
 ```
 
@@ -127,6 +127,8 @@ CV$entries_data %>%
     with = title,
     where = loc,
     why = description_bullets
+        # tools = 'Java,Spring'
+
   )
 ```
 
